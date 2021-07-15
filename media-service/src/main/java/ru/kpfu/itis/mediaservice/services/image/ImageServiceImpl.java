@@ -18,7 +18,8 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public Image getImage(String name, HttpServletResponse response) {
-        return null;
+    public void getImage(String name, HttpServletResponse response) {
+        fileStorageService.writeFileToResponse(name,response,"img");
+
     }
 }

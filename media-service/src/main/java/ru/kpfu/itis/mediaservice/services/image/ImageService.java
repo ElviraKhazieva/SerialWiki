@@ -6,5 +6,5 @@ import javax.servlet.http.HttpServletResponse;
 
 public interface ImageService {
     public String saveImage (Image image);
-    public Image getImage(String name, HttpServletResponse response);
+    public void getImage(String name, HttpServletResponse response);
 }
