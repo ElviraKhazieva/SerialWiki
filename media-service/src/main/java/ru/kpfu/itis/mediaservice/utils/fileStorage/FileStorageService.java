@@ -9,7 +9,8 @@ import java.nio.file.Path;
 
 @Component
 public interface FileStorageService {
-    String saveFile(MultipartFile file);
+    public String saveFile(MultipartFile file);
+    public void writeFileToResponse(String name, HttpServletResponse response,String type);
 
 
 }
