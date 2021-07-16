@@ -8,6 +8,7 @@ import org.hibernate.annotations.Table;
 import org.springframework.data.domain.PageRequest;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Data
@@ -30,12 +31,18 @@ public class User {
         ADMIN, CLIENT
     }
 
-    @OneToMany
-    private List<Favorites> favorites;
+    @ElementCollection
+    @CollectionTable(name = "favorites", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+    @Column(name = "serial_id")
+    private List<Integer> favorites;
 
-    @OneToMany
-    private List<ToLookList> toLookList;
+    @ElementCollection
+    @CollectionTable(name = "to_look", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+    @Column(name = "serial_id")
+    private List<Integer> toLook;
 
     @OneToMany
     private List<Credentials> credentials;
+
+
 }
