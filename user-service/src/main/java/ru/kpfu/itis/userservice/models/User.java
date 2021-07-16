@@ -24,7 +24,7 @@ public class User {
     private String nickname;
 
     private String email;
-
+ 
     private Role role;
 
     public enum Role {
