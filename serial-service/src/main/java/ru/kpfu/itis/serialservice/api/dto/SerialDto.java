@@ -15,13 +15,21 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Builder
 public class SerialDto {
+
     private Long id;
+
     private String serialName;
+
     private LocalDate creationDate;
+
     private String description;
+
     private double popularity;
+
     private List<DirectorDto> directors;
+
     private List<GenreDto> genres;
+
     private String previewImagePath;
 
     public static SerialDto from(Serial serial){
