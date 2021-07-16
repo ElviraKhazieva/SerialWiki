@@ -34,7 +34,7 @@ public class SerialRestController {
 
     @PutMapping("/serial/{id}")
     public ResponseEntity<?> updateSerial(@RequestBody SerialForm serialForm, @PathVariable Long id){
-        serialService.updateSerial(serialForm);
+        serialService.updateSerial(serialForm, id);
         return ResponseEntity.ok().build();
     }
 }

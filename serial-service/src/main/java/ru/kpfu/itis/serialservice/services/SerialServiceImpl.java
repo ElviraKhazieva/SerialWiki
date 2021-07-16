@@ -5,26 +5,46 @@ import org.springframework.stereotype.Service;
 import ru.kpfu.itis.serialservice.api.dto.SerialDto;
 import ru.kpfu.itis.serialservice.api.dto.SerialForm;
 import ru.kpfu.itis.serialservice.api.services.SerialService;
+import ru.kpfu.itis.serialservice.models.Director;
+import ru.kpfu.itis.serialservice.models.Genre;
 import ru.kpfu.itis.serialservice.models.Serial;
+import ru.kpfu.itis.serialservice.repositories.DirectorsRepository;
+import ru.kpfu.itis.serialservice.repositories.GenresRepository;
 import ru.kpfu.itis.serialservice.repositories.SerialsRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class SerialServiceImpl implements SerialService {
     @Autowired
-    SerialsRepository serialsRepository;
+    private SerialsRepository serialsRepository;
+
+    @Autowired
+    private DirectorsRepository directorsRepository;
+
+    @Autowired
+    private GenresRepository genresRepository;
 
     @Override
     public void addSerial(SerialForm serial) {
-        serialsRepository.save(Serial.from(serial));
-
-
+        Serial newSerial = Serial.from(serial);
+        List<Director> directorList = new ArrayList<>();
+        for(Long id : serial.getDirectorIds()){
+            directorList.add(directorsRepository.getById(id));
+        }
+        newSerial.setDirectors(directorList);
+        List<Genre> genresList = new ArrayList<>();
+        for(Long id : serial.getGenreIds()){
+            genresList.add(genresRepository.getById(id));
+        }
+        newSerial.setGenres(genresList);
+        serialsRepository.save(newSerial);
     }
 
     @Override
-    public void updateSerial(SerialForm serial) {
+    public void updateSerial(SerialForm serial, Long id) {
 
     }
 
