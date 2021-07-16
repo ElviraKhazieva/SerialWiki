@@ -18,7 +18,7 @@ public class GenreServiceImpl implements GenreService {
 
     @Override
     public List<GenreDto> getAllGenre() {
-
+        //todo replace with from
         return Arrays.asList(GenreDto.builder().
                 id(1L).
                 description("blabla")

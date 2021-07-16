@@ -1,8 +1,17 @@
 package ru.kpfu.itis.serialservice.api.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class SerialForm {
     private String serialName;
     private LocalDate creationDate;
