@@ -6,7 +6,6 @@ import ru.kpfu.itis.serialservice.api.dto.DirectorDto;
 
 @Controller
 public class DirectorController {
-//    @GetMapping("/director/{id-director}")
-//    public DirectorDto
+
 
 }

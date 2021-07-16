@@ -10,5 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class DirectorForm {
-    private String name;
+
+    private String firstName;
+
+    private String lastName;
+
 }

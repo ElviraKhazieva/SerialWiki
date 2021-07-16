@@ -39,6 +39,7 @@ public class FileStorageServiceImpl implements FileStorageService {
     public void writeFileToResponse(String name, HttpServletResponse response, String type) {
         //TODO: норм тайп делать
         System.out.println(name);
+
         response.setContentType(type + "/" + name.split("\\.")[1]);
         try {
             IOUtils.copy(new FileInputStream(storagePath + "\\" + name), response.getOutputStream());

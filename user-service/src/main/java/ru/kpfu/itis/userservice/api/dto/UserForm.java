@@ -12,9 +12,14 @@ import javax.validation.constraints.Email;
 @NoArgsConstructor
 @Builder
 public class UserForm {
-    private String nickname;
+
     @Email
     private String email;
+
+    private String nickname;
+
     private String password;
+
     private String passwordRepeat;
+
 }

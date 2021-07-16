@@ -30,24 +30,31 @@
                                     </label>
                                 </div>
 
-<#--                                <div class="form-group">-->
-<#--                                    <label>Image-->
-<#--                                        <input name="image" type="file" accept="image/*" required>-->
-<#--                                    </label>-->
-<#--                                </div>-->
+                                <div class="form-group">
+                                    <label>Image
+                                        <input name="image" type="file" accept="image/*" required>
+                                    </label>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="director">Режисёр</label>
-                                    <select class="form-control " name="director" id="director">
+
+                                  <select class="form-control " name="directors" id="directors">
                                         <#list directors as d>
-                                            <option value="${d.getId()}">${d.getFirstName()} ${d.getLastName()}</option>
+                                            <input class="form-check-input" type="checkbox" value="${d.getId()}" id="">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                ${d.getName()}
+                                            </label>
+
                                         </#list>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="genre">Жанры</label>
-                                    <select class="form-check " name="genres" id="genre">
+
+                                    <select class="form-check " name="genres" id="genres">
+
                                         <#list genres as g>
                                             <input class="form-check-input" type="checkbox" value="${g.getId()}" id="">
                                             <label class="form-check-label" for="defaultCheck1">
