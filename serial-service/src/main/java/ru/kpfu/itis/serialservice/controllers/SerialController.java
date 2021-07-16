@@ -14,7 +14,7 @@ public class SerialController {
     @Autowired
     GenreService genreService;
 
-    @GetMapping("adding_serial")
+    @GetMapping("/adding/serial")
     public String getAddingPage(Model model){
         model.addAttribute("directors",directorService.getAllDirector());
         model.addAttribute("genres",genreService.getAllGenre());

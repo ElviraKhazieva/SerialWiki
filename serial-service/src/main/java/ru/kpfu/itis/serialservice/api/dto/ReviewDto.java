@@ -16,10 +16,15 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Builder
 public class ReviewDto {
+
     private Long authorId;
+
     private String authorName;
+
     private String text;
+
     private LocalDate date;
+
     private Long serialId;
 
     public static ReviewDto from(Review review){

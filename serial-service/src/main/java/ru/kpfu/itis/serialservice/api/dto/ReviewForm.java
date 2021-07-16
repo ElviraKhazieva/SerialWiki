@@ -12,7 +12,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Builder
 public class ReviewForm {
+
     private Long authorId;
+
     private String text;
+
     private Long serialId;
+
 }

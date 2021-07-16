@@ -15,8 +15,11 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Builder
 public class DirectorDto {
+
     private Long id;
+
     private String firstName;
+
     private String lastName;
 
     public static DirectorDto from(Director director){
@@ -28,6 +31,8 @@ public class DirectorDto {
     }
 
     public static List<DirectorDto> from(List<Director> directors){
-        return directors.stream().map(DirectorDto::from).collect(Collectors.toList());
+        return directors.stream()
+                .map(DirectorDto::from)
+                .collect(Collectors.toList());
     }
 }

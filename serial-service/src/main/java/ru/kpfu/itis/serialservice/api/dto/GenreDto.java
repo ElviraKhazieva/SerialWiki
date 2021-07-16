@@ -15,19 +15,20 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Builder
 public class GenreDto {
-    private Long id;
-    private String name;
-    private String description;
 
-    public static GenreDto from(Genre genre){
+    private Long id;
+
+    private String name;
+
+    public static GenreDto from(Genre genre) {
         return GenreDto.builder()
                 .id(genre.getId())
                 .name(genre.getName())
-                .description(genre.getDescription())
                 .build();
     }
 
-    public static List<GenreDto> from(List<Genre> genres){
+    public static List<GenreDto> from(List<Genre> genres) {
         return genres.stream().map(GenreDto::from).collect(Collectors.toList());
     }
+
 }
