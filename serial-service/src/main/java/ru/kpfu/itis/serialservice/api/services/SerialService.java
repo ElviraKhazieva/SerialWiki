@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface SerialService {
     void addSerial(SerialForm serial);
 
-    void updateSerial(SerialDto serial);
+    void updateSerial(SerialForm serial);
 
     void deleteSerial(Long id);
 

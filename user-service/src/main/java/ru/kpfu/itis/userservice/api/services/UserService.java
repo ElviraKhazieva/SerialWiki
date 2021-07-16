@@ -3,7 +3,6 @@ package ru.kpfu.itis.userservice.api.services;
 import ru.kpfu.itis.userservice.api.dto.UserDto;
 import ru.kpfu.itis.userservice.api.dto.UserForm;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
