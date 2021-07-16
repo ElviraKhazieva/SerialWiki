@@ -48,7 +48,7 @@ public class SerialServiceImpl implements SerialService {
 
     public void updateSerial(SerialForm serial, Long id) {
         serialsRepository.save(Serial.from(serial));
-
+    }
 
 
 
