@@ -12,13 +12,13 @@ import java.util.Optional;
 
 public interface SerialsRepository extends JpaRepository<Serial, Long> {
 
-    List<Serial> findAllByGenresIsContaining(List<Genre> genres);
-
-    List<Serial> findAllByGenresContains(List<Genre> genres);
-
-    List<Serial> findAllByGenres(List<Genre> genres);
-
-    List<Serial> findAllByDirectors(List<Director> directors);
+//    List<Serial> findAllByGenresIsContaining(List<Genre> genres);
+//
+//    List<Serial> findAllByGenresContains(List<Genre> genres);
+//
+//    List<Serial> findAllByGenres(List<Genre> genres);
+//
+//    List<Serial> findAllByDirectors(List<Director> directors);
 
     List<Serial> findAllByPopularity(Double value);
 

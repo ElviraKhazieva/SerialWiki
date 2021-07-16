@@ -31,15 +31,17 @@ public class User {
         ADMIN, CLIENT
     }
 
+    private Boolean isDeleted;
+
     @ElementCollection
     @CollectionTable(name = "favorites", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
     @Column(name = "serial_id")
-    private List<Integer> favorites;
+    private List<Long> favorites;
 
     @ElementCollection
     @CollectionTable(name = "to_look", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
     @Column(name = "serial_id")
-    private List<Integer> toLook;
+    private List<Long> toLook;
 
     @OneToMany
     private List<Credentials> credentials;

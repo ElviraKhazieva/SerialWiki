@@ -44,8 +44,6 @@ public class Serial {
         return Serial.builder()
                 .creation(form.getCreationDate())
                 .description(form.getDescription())
-                .genres(Genre.from(form.getGenres()))
-                .directors(Director.from(form.getDirectors()))
                 .build();
 
     }

@@ -11,7 +11,7 @@ import javax.validation.constraints.Email;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserForm {
+public class UserSignUpForm {
 
     @Email
     private String email;
