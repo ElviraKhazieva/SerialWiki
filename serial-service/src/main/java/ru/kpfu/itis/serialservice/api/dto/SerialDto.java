@@ -5,7 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
 import java.time.LocalDate;
+
 import java.util.List;
 
 @Data
@@ -15,7 +17,7 @@ import java.util.List;
 public class SerialDto {
     private Long id;
     private String serialName;
-    private LocalDate creationDate;
+    private Date creationDate;
     private String description;
     private double popularity;
     private List<DirectorDto> directors;

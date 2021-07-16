@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.kpfu.itis.serialservice.api.dto.SerialForm;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -38,4 +39,14 @@ public class Serial {
 
     @OneToMany
     private List<Review> reviews;
+
+    public static Serial from(SerialForm form) {
+        return Serial.builder()
+                .creation(form.getCreationDate())
+                .description(form.getDescription())
+                .genres(Genre.from(form.getGenres()))
+                .directors(Director.from(form.getDirectors()))
+                .build();
+
+    }
 }
