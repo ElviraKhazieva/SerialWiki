@@ -24,5 +24,6 @@ public class GenreServiceImpl implements GenreService {
 
     @Override
     public List<GenreDto> getAllGenre() {
+        return null;
     }
 }
