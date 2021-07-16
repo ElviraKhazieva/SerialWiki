@@ -24,7 +24,7 @@ public class SerialServiceImpl implements SerialService {
     }
 
     @Override
-    public void updateSerial(SerialDto serial) {
+    public void updateSerial(SerialForm serial) {
 
     }
 
