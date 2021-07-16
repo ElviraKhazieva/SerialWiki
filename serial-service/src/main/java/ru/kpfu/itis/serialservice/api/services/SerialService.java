@@ -13,13 +13,14 @@ public interface SerialService {
 
     void deleteSerial(Long id);
 
-    Optional<SerialDto> getSerialById(Long id);
+     SerialDto getSerialById(Long id);
 
     List<SerialDto> getSerialsLike(String name);
 
     List<SerialDto> getSerialsByNew(int begin, int end);
 
     List<SerialDto> getSerialsByPopularity(int begin, int end);
+
 
     void updatePopularity(Long id, double popularity);
 }

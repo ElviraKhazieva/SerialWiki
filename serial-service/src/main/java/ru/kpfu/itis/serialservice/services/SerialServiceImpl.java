@@ -14,6 +14,7 @@ import ru.kpfu.itis.serialservice.repositories.SerialsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -44,9 +45,10 @@ public class SerialServiceImpl implements SerialService {
     }
 
     @Override
-    public void updateSerial(SerialForm serial, Long id) {
 
-    }
+    public void updateSerial(SerialForm serial, Long id) {
+        serialsRepository.save(Serial.from(serial));
+
 
 
 
@@ -57,23 +59,30 @@ public class SerialServiceImpl implements SerialService {
     }
 
     @Override
-    public Optional<SerialDto> getSerialById(Long id) {
-        return Optional.empty();
+    public SerialDto getSerialById(Long id) {
+        Serial serial = serialsRepository.findById(id).orElseThrow(()->new NoSuchElementException("no serial"));
+        return SerialDto.from(serial);
     }
 
     @Override
     public List<SerialDto> getSerialsLike(String name) {
-        return null;
+        return SerialDto.from(serialsRepository.findSerialByNameContaining(name));
     }
 
     @Override
     public List<SerialDto> getSerialsByNew(int begin, int end) {
-        return null;
+        if(begin <= end) {
+            return SerialDto.from(serialsRepository.getAllByCreation());
+        }
+        throw new IllegalArgumentException("begin > end");
     }
 
     @Override
     public List<SerialDto> getSerialsByPopularity(int begin, int end) {
-        return null;
+        if(begin <= end) {
+            return SerialDto.from(serialsRepository.getAllByPopularity());
+        }
+        throw new IllegalArgumentException("begin > end");
     }
 
     @Override
