@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.kpfu.itis.serialservice.api.dto.SerialDto;
 import ru.kpfu.itis.serialservice.api.dto.SerialForm;
 import ru.kpfu.itis.serialservice.api.services.SerialService;
+import ru.kpfu.itis.serialservice.models.Serial;
 import ru.kpfu.itis.serialservice.repositories.SerialsRepository;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class SerialServiceImpl implements SerialService {
 
     @Override
     public void addSerial(SerialForm serial) {
-        serialsRepository.save();
+        serialsRepository.save(Serial.from(serial));
 
 
     }
