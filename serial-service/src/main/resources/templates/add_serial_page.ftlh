@@ -30,17 +30,17 @@
                                     </label>
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Image
-                                        <input name="image" type="file" accept="image/*" required>
-                                    </label>
-                                </div>
+<#--                                <div class="form-group">-->
+<#--                                    <label>Image-->
+<#--                                        <input name="image" type="file" accept="image/*" required>-->
+<#--                                    </label>-->
+<#--                                </div>-->
 
                                 <div class="form-group">
                                     <label for="director">Режисёр</label>
                                     <select class="form-control " name="director" id="director">
                                         <#list directors as d>
-                                            <option value="${d.getId()}">${d.getName()}</option>
+                                            <option value="${d.getId()}">${d.getFirstName()} ${d.getLastName()}</option>
                                         </#list>
                                     </select>
                                 </div>
