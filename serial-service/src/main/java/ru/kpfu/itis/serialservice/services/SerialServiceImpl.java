@@ -28,6 +28,8 @@ public class SerialServiceImpl implements SerialService {
 
     }
 
+
+
     @Override
     public void deleteSerial(Long id) {
         serialsRepository.deleteById(id);
