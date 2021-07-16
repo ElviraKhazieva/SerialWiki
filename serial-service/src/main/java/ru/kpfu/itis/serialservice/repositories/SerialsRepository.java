@@ -30,8 +30,7 @@ public interface SerialsRepository extends JpaRepository<Serial, Long> {
 
     List<Serial> findSerialByNameContaining(String name);
 
-    List<Serial> getAllByPopularity();
+    List<Serial> getAll();
 
-    List<Serial> getAllByCreation();
 
 }

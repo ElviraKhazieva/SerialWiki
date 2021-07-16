@@ -72,7 +72,7 @@ public class SerialServiceImpl implements SerialService {
     @Override
     public List<SerialDto> getSerialsByNew(int begin, int end) {
         if(begin <= end) {
-            return SerialDto.from(serialsRepository.getAllByCreation());
+            return SerialDto.from(serialsRepository.getAll());
         }
         throw new IllegalArgumentException("begin > end");
     }
@@ -80,7 +80,7 @@ public class SerialServiceImpl implements SerialService {
     @Override
     public List<SerialDto> getSerialsByPopularity(int begin, int end) {
         if(begin <= end) {
-            return SerialDto.from(serialsRepository.getAllByPopularity());
+            return SerialDto.from(serialsRepository.getAll());
         }
         throw new IllegalArgumentException("begin > end");
     }
