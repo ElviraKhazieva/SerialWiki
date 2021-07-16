@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class SerialDto {
     private Long id;
     private String serialName;
-    private Date creationDate;
+    private LocalDate creationDate;
     private String description;
     private double popularity;
     private List<DirectorDto> directors;

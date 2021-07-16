@@ -23,6 +23,6 @@ public class DirectorServiceImpl implements DirectorService {
 
     @Override
     public List<DirectorDto> getAllDirector() {
-       
+       return null;
     }
 }

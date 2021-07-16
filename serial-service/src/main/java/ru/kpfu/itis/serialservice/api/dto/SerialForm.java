@@ -28,7 +28,7 @@ public class SerialForm {
     private String serialName;
     private Date creationDate;
     private String description;
-    private List<DirectorDto> directors;
-    private List<GenreDto> genres;
+    private List<Long> directorIds;
+    private List<Long> genreIds;
     private String previewImagePath;
 }
