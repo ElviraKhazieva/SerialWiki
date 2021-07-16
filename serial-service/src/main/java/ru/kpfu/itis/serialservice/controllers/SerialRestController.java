@@ -9,6 +9,7 @@ import ru.kpfu.itis.serialservice.api.services.DirectorService;
 import ru.kpfu.itis.serialservice.api.services.GenreService;
 import ru.kpfu.itis.serialservice.api.services.SerialService;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -22,8 +23,8 @@ public class SerialRestController {
 
     @GetMapping("/serial/{id}")
     public ResponseEntity<SerialDto> getSerial(@PathVariable("id") Long id){
-        Optional<SerialDto> optional = serialService.getSerialById(id);
-        return optional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+
+        return ResponseEntity.ok( serialService.getSerialById(id));
     }
 
     @PostMapping("/serial")
@@ -36,5 +37,9 @@ public class SerialRestController {
     public ResponseEntity<?> updateSerial(@RequestBody SerialForm serialForm, @PathVariable Long id){
         serialService.updateSerial(serialForm);
         return ResponseEntity.ok().build();
+    }
+    @GetMapping("/serials/{begin}/{end}")
+    public ResponseEntity<List<SerialDto>> getSerialsNew(@PathVariable("begin") int begin, @PathVariable("end") int end){
+        return ResponseEntity.ok( serialService.getSerialsByNew(begin,end)) ;
     }
 }
