@@ -16,7 +16,7 @@ public class SignUpController {
     @Autowired
     private SignUpService service;
 
-    @PostMapping("/signUp")
+    @PostMapping(" /users/signUp")
     public void signUp(@RequestBody UserSignUpForm user, HttpServletResponse response) {
         service.signUp(user);
         response.setStatus(200);

@@ -19,7 +19,7 @@ public class SerialController {
     @Autowired
     private SerialService serialService;
 
-    @GetMapping("/adding/serial")
+    @GetMapping("/serials/create")
     public String getAddingPage(Model model){
         model.addAttribute("directors",directorService.getAllDirector());
         model.addAttribute("genres",genreService.getAllGenre());
@@ -27,7 +27,7 @@ public class SerialController {
 
     }
 
-    @PostMapping("/create")
+    @PostMapping("/serials/create")
     public String addSerial(SerialForm form){
         serialService.addSerial(form);
         return "redirect:/serial_view";

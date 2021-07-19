@@ -21,19 +21,19 @@ public class SerialRestController {
     @Autowired
     private SerialService serialService;
 
-    @GetMapping("/serial/{id}")
+    @GetMapping("/serials/{id}")
     public ResponseEntity<SerialDto> getSerial(@PathVariable("id") Long id){
 
         return ResponseEntity.ok( serialService.getSerialById(id));
     }
 
-    @PostMapping("/serial")
+    @PostMapping("/serials")
     public ResponseEntity<?> addSerial(@RequestBody SerialForm serialForm){
         serialService.addSerial(serialForm);
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/serial/{id}")
+    @PutMapping("/serials/{id}")
     public ResponseEntity<?> updateSerial(@RequestBody SerialForm serialForm, @PathVariable Long id){
         serialService.updateSerial(serialForm, id);
         return ResponseEntity.ok().build();

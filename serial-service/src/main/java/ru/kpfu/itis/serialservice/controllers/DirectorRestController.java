@@ -19,12 +19,12 @@ public class DirectorRestController {
     @Autowired
     private DirectorService directorService;
 
-    @GetMapping("/directors")
+    @GetMapping("/serials/directors")
     public ResponseEntity<List<DirectorDto>> getDirectorList(){
         return ResponseEntity.ok(directorService.getAllDirector());
     }
 
-    @PostMapping
+    @PostMapping("/serials/directors")
     public ResponseEntity<?> addDirector(@RequestBody DirectorForm directorForm){
         directorService.addDirector(directorForm);
         return ResponseEntity.ok().build();

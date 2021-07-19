@@ -20,12 +20,12 @@ public class GenreRestController {
     @Autowired
     private GenreService genreService;
 
-    @GetMapping("/directors")
+    @GetMapping("/serials/genres")
     public ResponseEntity<List<GenreDto>> getGenreList(){
         return ResponseEntity.ok(genreService.getAllGenre());
     }
 
-    @PostMapping
+    @PostMapping("/serials/genres")
     public ResponseEntity<?> addGenre(@RequestBody GenreForm genreForm){
         genreService.addGenre(genreForm.getName());
         return ResponseEntity.ok().build();
