@@ -12,16 +12,16 @@ public interface UsersRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByNickname(String nickname);
 
-    List<User> findAllByFavoritesContaining(List<Integer> favorites);
-
-    List<User> findAllByFavoritesContains(List<Integer> favorites);
-
-    List<User> findAllByFavorites(List<Integer> favorites);
-
-    List<User> findAllByToLook(List<Integer> toLook);
-
-    List<User> findAllByToLookContaining(List<Integer> toLook);
-
-    List<User> findAllByToLookContains(List<Integer> toLook);
+//    List<User> findAllByFavoritesContaining(List<Integer> favorites);
+//
+//    List<User> findAllByFavoritesContains(List<Integer> favorites);
+//
+//    List<User> findAllByFavorites(List<Integer> favorites);
+//
+//    List<User> findAllByToLook(List<Integer> toLook);
+//
+//    List<User> findAllByToLookContaining(List<Integer> toLook);
+//
+//    List<User> findAllByToLookContains(List<Integer> toLook);
 
 }
