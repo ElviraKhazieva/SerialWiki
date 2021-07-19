@@ -1,6 +1,8 @@
 package ru.kpfu.itis.serialservice.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import ru.kpfu.itis.serialservice.models.Director;
 import ru.kpfu.itis.serialservice.models.Genre;
 import ru.kpfu.itis.serialservice.models.Review;
@@ -31,6 +33,10 @@ public interface SerialsRepository extends JpaRepository<Serial, Long> {
     List<Serial> findSerialByNameContaining(String name);
 
     List<Serial> getAll();
+
+    @Query(value = "select * from serial order by creation offset :pass limit :size ",
+            nativeQuery = true)
+    List<Serial> getOrderedByDate(@Param("size")int size,@Param("pass") int pass);
 
 
 }
