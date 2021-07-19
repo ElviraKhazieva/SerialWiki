@@ -61,6 +61,10 @@ public class SerialServiceImpl implements SerialService {
     @Override
     public SerialDto getSerialById(Long id) {
         Serial serial = serialsRepository.findById(id).orElseThrow(()->new NoSuchElementException("no serial"));
+
+        serial.setPopularity(serial.getPopularity() + 1);
+        serialsRepository.save(serial);
+
         return SerialDto.from(serial);
     }
 
@@ -72,7 +76,7 @@ public class SerialServiceImpl implements SerialService {
     @Override
     public List<SerialDto> getSerialsByNew(int begin, int end) {
         if(begin <= end) {
-            return SerialDto.from(serialsRepository.getAll());
+            return SerialDto.from(serialsRepository.getOrderedByDate(end-begin,begin-1));
         }
         throw new IllegalArgumentException("begin > end");
     }
