@@ -34,7 +34,7 @@ public interface SerialsRepository extends JpaRepository<Serial, Long> {
 
     List<Serial> getAll();
 
-    @Query(value = "select * from serial order by creation offset :pass limit :size ",
+    @Query(value = "select * from serial order by creation desc offset :pass limit :size ",
             nativeQuery = true)
     List<Serial> getOrderedByDate(@Param("size")int size,@Param("pass") int pass);
 
